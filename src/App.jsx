@@ -3,8 +3,8 @@ import Header from './components/Header'
 
 const App = () => {
   return (
-    <div>
-      <Header/>
+    <div className='w-full overflow-hidden'>
+      <Header />
     </div>
   )
 }
