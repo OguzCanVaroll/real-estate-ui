@@ -1,5 +1,6 @@
 import React from 'react'
 import { toast } from 'react-toastify';
+import { motion } from "motion/react"
 
 const Contact = () => {
 const [result, setResult] = React.useState("");
@@ -31,7 +32,12 @@ const [result, setResult] = React.useState("");
     }
 };
   return (
-    <div className='text-center w-full py-20 p-6 lg:px-32 overflow-hidden' id='Contact'>
+    <motion.div 
+        initial = {{opacity: 0, x:200}}
+        transition = {{ duration: 1}}
+        whileInView={{opacity: 1, x:0}}
+        viewport={{once:true}}
+    className='text-center w-full py-20 p-6 lg:px-32 overflow-hidden' id='Contact'>
         <h1 className='text-2xl sm:text-4xl font-bold mb-2 text-center'> Contact 
             <span className='underline underline-offset-4 decoration-1 under font-light'>With us</span>
         </h1>
@@ -57,7 +63,7 @@ const [result, setResult] = React.useState("");
         </div>
         <button className=' bg-blue-600 text-white py-2 px-12 mb-10 rounded'>{result ? result: "Send Message"}</button>
     </form>
-    </div>
+    </motion.div>
   )
 }
 
